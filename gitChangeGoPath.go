@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"go/parser"
 	"go/token"
+	"golang.org/x/tools/go/packages"
 	"io/ioutil"
 	"os"
 	"os/exec"
