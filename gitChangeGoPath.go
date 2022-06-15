@@ -74,7 +74,7 @@ func gitChangeGoPath(testDir string, baseImportName string, masterRepoBranchName
 	fmt.Println(fullLocalImportList)
 
 	importMap := stringSliceToMap(fullLocalImportList)
-	
+	//Will need to update this from the git diff file, to the actual module/package name that the file modified.
 	// For all the files changed in the branch, path from go.mod root
 	for _, diffFileName := range gitDiffFilesWithBaseAppended {
 		// If a file changed is imported by a test in the test directory specified
