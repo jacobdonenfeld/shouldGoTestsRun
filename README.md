@@ -1,5 +1,4 @@
-## gitChangeGoPath
-Name to be changed
+## shouldGoTestsRun
 
 Tool used to determine if files changed in git branch would affect specified test files. 
 
@@ -14,6 +13,10 @@ example_job:
   script:
     - cd $BASE_GIT_DIR
     # This will exit 1 if the tests don't need to be ran
-    - gitChangeGoPath -test-dir ./tests -base-folder-name $REPO_NAME -master-repo-branch-name origin/master
+    - if gitChangeGoPath -test-dir ./tests -base-folder-name $REPO_NAME -master-repo-branch-name origin/master; then exit 0; fi
     - go test ./tests 
 ```
+
+### TODO:
+- Have this run on individual test paths
+- use golang.org/x/tools/go/packages: https://eli.thegreenplace.net/2020/writing-multi-package-analysis-tools-for-go/
