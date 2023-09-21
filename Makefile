@@ -3,4 +3,4 @@ build:
 	go build -o bin
 
 test:
-	./bin/gitChangeGoPath -test-dir tests -base-folder-name gitChangeGoPath -master-repo-branch-name master
+	./bin/shouldGoTestsRun -test-dir tests -base-folder-name shouldGoTestsRun -comparison-branch-name master

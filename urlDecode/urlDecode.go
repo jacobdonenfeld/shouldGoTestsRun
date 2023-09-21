@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 )
-
+//
 func UrlDecode() {
 	// decode URL by url.Parse
 	parsedURL, err := parse("https://example.com/foo+bar%21?query=ab%2Bc&query2=de%24f")

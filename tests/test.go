@@ -2,9 +2,9 @@ package tests
 
 import (
 	"fmt"
-	"gitChangeGoPath/urlDecode"
+	"shouldGoTestsRun/urlDecode"
 )
-
+//
 func main(){
 	urlDecode.UrlDecode()
 	fmt.Println("done!")
