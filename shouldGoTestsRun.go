@@ -63,8 +63,7 @@ func gitChangeGoPath(testDir string, baseImportName string, comparisonRepoBranch
 		return err
 	}
 
-	// Get full list of imports here, so far just using initial imports
-	// Would like to walk the initial file imports and follow their imports.
+	// Get full list of imports
 	fullLocalImportList := initialFileImports
 
 	// Get list of files changed from current branch to master branch
@@ -176,7 +175,7 @@ func getImportsFromFile(fullFilePath string, baseImportFolder string) ([]string,
 		importString := strings.Trim(individualImportStruct.Path.Value, `"'`)
 		if checkIfContainsBaseFolder.MatchString(importString) {
 			fileInfo, err := os.Stat(basePath + importString)
-			// Walk the directory and import all files it
+			// Walk the directory and import all golang files it contains
 			if fileInfo.IsDir() {
 				directoryImports, err = getDirectoryImports(basePath + importString, false, baseImportFolder)
 				if err != nil {
